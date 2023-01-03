@@ -10,12 +10,14 @@ Metagenomic classification using Transformer
 4. [Configuration file](#4-configuration-file)
 5. [Testing the model](#5-testing-the-model)
 6. [Training and testing data preparation](#6-training-and-testing-data-preparation)
+7. [Additional data](#7-additional-data)
 
 ## 1. Folder structure 
 The project is structured into the following folders:
 - **bin**: Contains third party scripts that are used by other scripts in the projects
 - **scripts**: Contains scripts for training data generation and plotting of results graphics
 - **src**: Contains the actual code for model definition, training and testing
+- **sequence_metadata**: Contains genus and species mapping as well as taxonomy information and weightings for the model (see configuration file) 
 
 ## 2. Setup
 To use the code you need to have Python3 and CUDA 11.1 installed. Preferably, use a virtual environment to install the dependencies. To install the dependencies invoke 
@@ -180,5 +182,9 @@ In case that you also want to create the reverse-complement of both the forward 
 ./interleave_reads_bi_paired.sh --forward-path <path-to-forward-strand-reads> \
                                 --reverse-path <path-to-reverse-strand-reads> \
                                 --output-path <path-where-to-save-interleaved-reads>
-```
+``` 
+
+## 7. Additional data
+
+Following soon
 
