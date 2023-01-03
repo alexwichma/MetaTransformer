@@ -1,0 +1,6 @@
+name: embed_lstm_attention
+embed_dim: 100  # d_embed, dimension of token embedding
+lstm_dim: 300  # d_lstm, dimension of hidden states in LSTM
+att_dim: 350  # d_att, size of the attention vectors
+num_att_heads: 30  # r, number of attention heads
+dense_dim: 3000 # d_fc, size of the hidden layers in the fc-layers

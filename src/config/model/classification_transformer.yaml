@@ -1,0 +1,9 @@
+name: classification_transformer
+embed_dim: 128  # d_model, size of the embedding
+num_att_heads: 2  # h, number of attention heads
+dim_ff: 512  # d_ff, dimension of feed forward net
+num_encoder_blocks: 1  # number of transformer encoder blocks
+dropout: 0.1  # dropout that is used for the model
+use_pad_mask: True  # if padding should be masked or not
+activation: relu  # the non-linear activation
+aggregation_mode: mean # how to aggregate hidden states, mean or cls

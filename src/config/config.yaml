@@ -1,0 +1,72 @@
+cfgs:
+  dataset: genus_hgr_umgs  # which dataset to use, the name is equal to the .yaml file of the config under the "dataset" folder
+  model: classification_transformer  # which model to use, the name is equal to the .yaml file of the config under the "model" folder
+  optimizer: adam  # which optimizer to use, the name is equal to the .yaml file of the config under the "optimizer" folder
+
+# do note: config interpolations (aka ${...}), are lazily evaluated, i.e. only when the field is actually accessed
+# This means even if writing a parsed config back to disk (like it happens after training), the interpolation will still not be filled (which is a good thing :) )
+paths:
+  data_path_root: ???  # we need this in order to allow running scripts in different environments 
+  vocabulary_path: ${paths.data_path_root}/vocabulary/vocab_${mdl_common.kmer_size}mer.txt # vocabulary path (please edit if needed)
+  bpe_model_path: ${paths.data_path_root}/data/bpe/model/model_22_token.json # only needed if mode bpe is used (please edit if needed)
+  class_weight_path: ${paths.data_path_root}/data/hgr_umgs/train_raw/sequence_metadata/weightings.npy # class weights (please edit if needed)
+
+common:
+  experiment_name: ???  # will be filled from command line
+  prepend_cls_token: False  # whether a cls token should be prepended to each sequence
+  resume_model: False  # will be filled after command line invocation
+
+hashing:
+  num_buckets: 22  # number of buckets for the hash functions, to the power of two, i.e. 2^22
+  num_hash_functions: 6  # number of hash functions for the hash embedding 
+
+multi_level_cls:
+  use: False  # whether to use multi_level classificatio
+  ranks: Genome,Genus  # name of the ranks
+  num_classes: 1535,120  # classes per rank
+
+mdl_common:
+  input_module: bpe  # input tokenization and encoding method
+  kmer_size: 12  # size of the used k-mers
+  num_classes: 120 # number of classes, e.g. 120, 2505
+  class_indices: 1  # index after which separator ("|") in the read header the class id is found
+  classification_threshold: 0.5  # classification threshold for metric reporting
+  sparse_embedding: True  # whether sparse embedding gradients should be used or not
+
+device_settings:
+  use_cpu: False  # whether CPU should be use for model training or not
+  gpu_count: 1  # the number of GPUs to use. This is ignored if gpu_ids is specified, otherwise it uses indexes starting at zero, e.g. 3 GPUs => [0, 1, 2]
+  gpu_ids: 1  # comma-separated list of GPU ids to use. Ff this left empty, gpu_count will be used
+  split_gpus: False  # if model should be split on two gpus. Note: Only supported for transformer encoder model
+
+dataloader:
+  batch_size: 2048  # batch size to use during (training)
+  num_workers: 13  # number of workers to use for parallel data transformation
+
+training:
+  save_interval: 1  # after how many evaluation_interval's a model is saved
+  logging_interval: 100  # after how many steps (^=batches) the metrics are logged
+  evaluation_interval: 10000  # after how many steps(^=batches) the model is evaluated on a batch of validation data
+  max_steps: 300000  # maximum number of steps(^=batches) for the models to train
+  early_stop_threshold: 5  # maximum number of evaluation_interval's without improvement, before model training is stopped
+  save_top_n_models: 2  # number of last models to save
+  use_cudnn_benchmark: True  # whether to enable cudnn benchmark flag for pytorch
+  monitor_metric: min loss/val  # which metric to monitor <min/max> <metric-name>
+  amp: True  # whether to use mixed precision computations
+  lr_scheduler_enabled: False  # whether to enable learning rate scheduler
+  lr_scheduler:
+    _target_: torch.optim.lr_scheduler.StepLR
+    step_size: 30000  # steps after which to reduce learning rate
+    gamma: 0.95  # amount to which learning rate is reduced on each reduction
+  warmup_lr_scheduler_enabled: False  # whether to enable learning rate warmup scheduler
+  warmup_lr_scheduler:
+    _target_: pytorch_warmup.LinearWarmup
+    warmup_period: 3000  # learning rate is linearly warmed up over this amount of time
+    
+dataset:
+  train_set_path: ${paths.data_path_root}/train_genus  # edit paths 
+  validation_set_path: ${paths.data_path_root}/val_genus  # edit paths 
+  
+ optimizer:
+  _target_: torch.optim.Adam # the specific optimizer to use
+  lr: 0.001 # learning rate
