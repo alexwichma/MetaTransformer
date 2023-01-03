@@ -101,9 +101,9 @@ The argument `level-index` is used when a multi-level classifier needs to be tes
 To split the input into multiple files you can use external software like BBtools or our simple script "src/script/subset_fasta.py" with the parameters:
 ```
 python src/script/subset_fasta.py \
-  --input <path to input file>
-  --n-reads <number of reads to split the file into>
-  --out-folder <path to out-folder>
+  --input <path to input file>  \
+  --n-reads <number of reads to split the file into> \
+  --out-folder <path to out-folder> 
 ```
 
 ## 6. Training and testing data preparation
