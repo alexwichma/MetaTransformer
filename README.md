@@ -139,7 +139,7 @@ The benchmark gut dataset can be downloaded [here](https://mail2sysueducn-my.sha
 
 The benchmark gut metadata can be downloaded [here](https://raw.githubusercontent.com/MicrobeLab/DeepMicrobes-data/master/benchmark_datasets/metadata_gut-derived_MAGs.txt)
 
-The benchmark mock dataset can be downloaded [here](https://mail2sysueducn-my.sharepoint.com/personal/liangqx7_mail2_sysu_edu_cn/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fliangqx7%5Fmail2%5Fsysu%5Fedu%5Fcn%2FDocuments%2FBenchmark%5Fdatasets%2Fmock%5Freal&originalPath=aHR0cHM6Ly9tYWlsMnN5c3VlZHVjbi1teS5zaGFyZXBvaW50LmNvbS86ZjovZy9wZXJzb25hbC9saWFuZ3F4N19tYWlsMl9zeXN1X2VkdV9jbi9FcUZIaWxtWWRMRkxxLUhYdUV4TVdac0JPYno4b3Z5anlkZmdxRXZWMm1VazVnP3J0aW1lPUFvNzBzdEpVMlVn).
+The benchmark mock dataset can be downloaded [here](https://mail2sysueducn-my.sharepoint.com/personal/liangqx7_mail2_sysu_edu_cn/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fliangqx7%5Fmail2%5Fsysu%5Fedu%5Fcn%2FDocuments%2FBenchmark%5Fdatasets%2Fmock%5Freal&ga=1)
 
 The benchmark mock metadata can be downloaded [here](https://github.com/MicrobeLab/DeepMicrobes-data/blob/master/benchmark_datasets/mock_ground_truth_templete.csv)
 
