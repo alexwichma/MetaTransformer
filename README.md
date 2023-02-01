@@ -186,5 +186,5 @@ In case that you also want to create the reverse-complement of both the forward 
 
 ## 7. Additional data
 
-Following soon
+Additional data can be accessed via https://github.com/alexwichma/MetaTransformer_data.
 
