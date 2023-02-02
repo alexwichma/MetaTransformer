@@ -32,6 +32,13 @@ python3 setup.py build_ext --inplace
 ```
 in the `src` folder.
 
+For training as well as inference embedding tables are needed. They are retrievable using https://doi.org/10.5281/zenodo.7594864 for different k-mer sizes.
+
+If you want to use our pretrained model, both genus and species models are available under:
+
+genus: https://doi.org/10.5281/zenodo.7594286
+species: https://doi.org/10.5281/zenodo.7594005
+
 ## 3. Model training
 For model training invoke the `train.py` script in the following way
 ```
