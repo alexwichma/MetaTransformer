@@ -143,7 +143,7 @@ To create read data from your training genomes use the `generate_training_reads.
 After labeling the reads can be modified or directly used for training a custom model.
 
 ### 6.2 Testing data
-The benchmark gut dataset can be downloaded [here](https://mail2sysueducn-my.sharepoint.com/personal/liangqx7_mail2_sysu_edu_cn/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fliangqx7%5Fmail2%5Fsysu%5Fedu%5Fcn%2FDocuments%2FBenchmark%5Fdatasets%2Fgut%5FMAG%2FMAG%5Freads%5F150bp%2Etar%2Egz&parent=%2Fpersonal%2Fliangqx7%5Fmail2%5Fsysu%5Fedu%5Fcn%2FDocuments%2FBenchmark%5Fdatasets%2Fgut%5FMAG&originalPath=aHR0cHM6Ly9tYWlsMnN5c3VlZHVjbi1teS5zaGFyZXBvaW50LmNvbS86dTovZy9wZXJzb25hbC9saWFuZ3F4N19tYWlsMl9zeXN1X2VkdV9jbi9FU242VTFtdHlpOUxsSzVBVl8xdFlsc0JWR05MZlhDbW9VSXh0WXROQ190R0pRP3J0aW1lPU16MVdpTkpVMlVn).
+The benchmark gut dataset can be downloaded [here](https://mail2sysueducn-my.sharepoint.com/personal/liangqx7_mail2_sysu_edu_cn/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fliangqx7%5Fmail2%5Fsysu%5Fedu%5Fcn%2FDocuments%2FBenchmark%5Fdatasets%2Fgut%5FMAG%2FMAG%5Freads%5F150bp%2Etar%2Egz&parent=%2Fpersonal%2Fliangqx7%5Fmail2%5Fsysu%5Fedu%5Fcn%2FDocuments%2FBenchmark%5Fdatasets%2Fgut%5FMAG&ga=1).
 
 The benchmark gut metadata can be downloaded [here](https://raw.githubusercontent.com/MicrobeLab/DeepMicrobes-data/master/benchmark_datasets/metadata_gut-derived_MAGs.txt)
 
